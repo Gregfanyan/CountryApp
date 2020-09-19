@@ -4,8 +4,5 @@ import productSagas from './product'
 import uiSagas from './ui'
 
 export default function* rootSaga() {
-  yield all([
-    ...productSagas,
-    ...uiSagas,
-  ])
+  yield all([...productSagas, ...uiSagas])
 }

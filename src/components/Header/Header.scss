@@ -1,0 +1,20 @@
+.header {
+  max-width: 100%;
+  background-color: #3f3e3e;
+}
+
+.HeadtableRow {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 90px;
+  max-width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: honeydew;
+  list-style: none;
+  margin-left: 66px;
+}
+
+.HeadtableRow li {
+  padding-right: 10px;
+}

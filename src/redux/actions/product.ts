@@ -29,8 +29,8 @@ export function removeProduct(product: Product): ProductActions {
 export function fetchProduct(productId: string) {
   return (dispatch: Dispatch) => {
     return fetch(`products/${productId}`)
-      .then(resp => resp.json())
-      .then(product => {
+      .then((resp) => resp.json())
+      .then((product) => {
         dispatch(addProduct(product))
       })
   }

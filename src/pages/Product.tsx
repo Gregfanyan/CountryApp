@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { AppState } from '../types'
 
 export default function Product() {
-  const { id } = useParams()
+  const { id } = useParams();
 
   const product = useSelector((state: AppState) =>
     state.product.inCart.find(p => p.id === id))
@@ -21,3 +21,4 @@ export default function Product() {
     </>
   )
 }
+ 
