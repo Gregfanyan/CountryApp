@@ -23,14 +23,12 @@ export default function TableRow({
         <Flag flag={flagUrl} />
       </td>
       <td>
-        {
-          <Link
-            to={`/TableRow/${countryName}`}
-            style={{ color: 'inherit', textDecoration: 'inherit' }}
-          >
-            {countryName}
-          </Link>
-        }
+        <Link
+          to={`/TableRow/${countryName}`}
+          style={{ color: 'inherit', textDecoration: 'inherit' }}
+        >
+          {countryName}
+        </Link>
       </td>
       <td>
         {languages &&

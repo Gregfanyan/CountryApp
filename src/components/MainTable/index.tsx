@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import Header from '../Header'
-import TableRow from '../TableRow/TableRow'
+import TableRow from '../TableRow'
 import ThemeContext from '../../useContext/context'
 
 import './mainTable.scss'

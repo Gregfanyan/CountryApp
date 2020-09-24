@@ -11,5 +11,6 @@ export const themes = {
 
 export default React.createContext({
   theme: themes.light,
-  switchTheme: () => {},
+  switchTheme: () => { }
 })
+    

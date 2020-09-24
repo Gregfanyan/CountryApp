@@ -1,4 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import SearchBar from '../../components/SearchBar'
+import useCountries from '../../Hooks/useCountries'
+import MainTable from '../../components/MainTable'
+import ThemeButton from '../../useContext/ThemedButton'
+
+import { searchProps } from '../../types'
+
+export default function Home() {
+  const [search, setSearch] = useState('')
+  const [data] = useCountries(search)
+  const handleChange: React.ReactEventHandler<HTMLInputElement> = (e): void => {
+    setSearch(e.currentTarget.value)
+  }
+
+  return (
+    <div>
+      <SearchBar handleChange={handleChange} search={search as searchProps} />
+      <ThemeButton />
+      <MainTable countries={data} />
+    </div>
+  )
+}
+
+/* import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -39,3 +64,4 @@ export default function Home() {
     </>
   )
 }
+ */

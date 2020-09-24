@@ -18,6 +18,7 @@ export default function useCountries(search: string) {
     )
     setData(result)
   }, [search, savedCountries])
+
   useEffect(() => {
     fetchData()
   }, [])
