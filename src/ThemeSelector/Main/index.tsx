@@ -1,11 +1,8 @@
 import React from 'react'
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { createStore } from 'redux'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { useSelector } from 'react-redux'
 
-import { darkTheme, lightTheme, partyTheme } from '../Themes/Themes'
 import ThemeSelector from '../Themes/Buttons'
-
 
 const GlobalStyle = createGlobalStyle`
   body {

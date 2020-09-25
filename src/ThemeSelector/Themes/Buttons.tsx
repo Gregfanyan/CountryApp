@@ -27,7 +27,7 @@ const ThemeSelector = () => {
         onClick={() => changeTheme(darkTheme)}
       ></StyledButton>
       <StyledButton
-        style={{ backgroundColor: '#6aa' }}
+        style={{ backgroundColor: '#C9C9C9' }}
         className="btn"
         onClick={() => changeTheme(lightTheme)}
       ></StyledButton>
