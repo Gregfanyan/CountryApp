@@ -1,8 +1,7 @@
-
-.input[type=text] {
-  width: 100%;
+.input[type='text'] {
+  width: 40%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 20px 0;
   box-sizing: border-box;
   border: 3px solid #ccc;
   -webkit-transition: 0.5s;
@@ -22,9 +21,18 @@ button:focus {
 }
 
 .SearchBar {
-  display: flex;
-  width: 40%;
+  width: 65%;
   display: inline-block;
-  margin-left: 50px;
-  
+  position: absolute;
+  top: 0;
+  left: 35%;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .SearchBar {
+    position: relative;
+    width: 100%;
+    margin: 0;
+  }
 }

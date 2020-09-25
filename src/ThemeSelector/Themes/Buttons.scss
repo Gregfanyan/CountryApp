@@ -1,0 +1,21 @@
+.styleButtons {
+  display: flex;
+  justify-content: flex-start;
+  display: inline-block;
+  margin-left: 50px;
+  margin: 30px;
+}
+
+.btn {
+  backface-visibility: hidden;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid #6aa;
+  border-width: 1px;
+  padding: 20px;
+  margin-left: 10px;
+}
+
+

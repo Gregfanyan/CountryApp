@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import Flag from '../Flag'
-
 import { TableRowProps } from '../../types'
-import ThemeContext from '../../useContext/context'
 
 import './tableRow.scss'
 
@@ -15,8 +13,6 @@ export default function TableRow({
   population,
   region,
 }: TableRowProps) {
-  const { theme } = useContext(ThemeContext)
-
   return (
     <tr className="tableRow">
       <td>
@@ -37,9 +33,7 @@ export default function TableRow({
       <td>{population}</td>
       <td>{region}</td>
       <td>
-        <button className="AddButton" style={{ color: theme.foreground }}>
-          ADD
-        </button>
+        <button className="AddButton">ADD</button>
       </td>
     </tr>
   )

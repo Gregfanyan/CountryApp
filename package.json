@@ -2,7 +2,6 @@
   "name": "fast-track-typescript-redux-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://Gregfanyan.github.io/fast-track-5-typescript-redux-template",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -17,6 +16,7 @@
     "@types/react-router-dom": "^5.1.3",
     "@types/redux-saga": "^0.10.5",
     "@types/redux-thunk": "^2.1.0",
+    "@types/styled-components": "^5.1.3",
     "create-use-context": "^1.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -29,6 +29,7 @@
     "redux-thunk": "^2.3.0",
     "rxjs-compat": "^6.6.3",
     "sass": "^1.26.10",
+    "styled-components": "^5.2.0",
     "typescript": "~3.7.2"
   },
   "scripts": {

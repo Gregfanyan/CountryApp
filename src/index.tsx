@@ -1,23 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import App from './App'
-import makeStore from './redux/store'
+import { themeReducer } from './redux/reducers/themeReducer'
 
 import './index.scss'
 
+const store = createStore(themeReducer)
 
-const store = makeStore()
-
-const WithProvider = () => (
+ReactDOM.render(
   <Provider store={store}>
     <Router>
       <App />
     </Router>
-  </Provider>
+  </Provider>,
+  document.getElementById('root')
 )
-
-ReactDOM.render(<WithProvider />, document.getElementById('root'))
-
