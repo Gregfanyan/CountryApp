@@ -5,10 +5,15 @@ import TableRow from '../TableRow'
 
 import './mainTable.scss'
 
-export default function MainTable({ countries }: any) {
+import { MainTableProps } from '../../types'
+
+export default function MainTable({
+  countries,
+  setActiveFilter,
+}: MainTableProps) {
   return (
     <div>
-      <Header />
+      <Header setActiveFilter={setActiveFilter} />
 
       <table className="table">
         <tbody className="tableBody">

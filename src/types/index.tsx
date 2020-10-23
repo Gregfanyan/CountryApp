@@ -5,6 +5,10 @@ export type CountryProps = {
   language: string
 }
 
+export type RouteParam = {
+  id: string
+}
+
 export type TableRowProps = {
   flagUrl: string
   countryName: string
@@ -24,3 +28,23 @@ export type FlagPropsType = {
 
 export type searchProps = 'string'
 
+export type CountryDetails = {
+  flag: string
+  name: string
+  capital: string
+  area: number
+  languages: Array<string>
+  population: number
+  region: string
+  currencies: Array<string>
+  countries: Array<string>
+}
+
+export type MainTableProps = {
+  countries: any
+  setActiveFilter: Function
+}
+
+export type HeaderProps = {
+  setActiveFilter: Function
+}

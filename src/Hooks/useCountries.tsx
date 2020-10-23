@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 
-export default function useCountries(search: string) {
-  const [data, setData] = useState([])
-  const [savedCountries, setSavedCountries] = useState([])
+export default function useCountries(search: string, activeFilter: string) {
+  const [data, setData] = useState<any[]>([])
+  const [savedCountries, setSavedCountries] = useState<any[]>([])
   const fetchData = () => {
     fetch('https://restcountries.eu/rest/v2/all')
       .then((res) => res.json())
@@ -22,5 +22,7 @@ export default function useCountries(search: string) {
   useEffect(() => {
     fetchData()
   }, [])
+
   return [data]
+
 }
