@@ -8,15 +8,13 @@ import Main from '../../ThemeSelector/Main'
 import { searchProps } from '../../types'
 
 export default function Home() {
-  const [activeFilter, setActiveFilter] = useState('Name')
+  const [activeFilter, setActiveFilter] = useState('')
   const [search, setSearch] = useState('')
   const [data] = useCountries(search, activeFilter)
   const handleChange: React.ReactEventHandler<HTMLInputElement> = (e) => {
     setSearch(e.currentTarget.value)
   }
-  //  console.log(activeFilter)
-  /*   console.log(data.slice(0, 5))
-   */
+
   return (
     <div>
       <Main />

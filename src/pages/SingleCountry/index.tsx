@@ -3,6 +3,8 @@ import useCountries from '../../Hooks/useCountries'
 import { useParams, useHistory } from 'react-router-dom'
 import { RouteParam } from '../../types'
 
+import ViewCountry from '../../components/ViewCountry'
+
 const SingleCountry = () => {
   const [search, setSearch] = useState('')
   const [data] = useCountries(search, '')
@@ -19,7 +21,6 @@ const SingleCountry = () => {
   }
 
   const country = data.find((country: any) => country.name === id)
-  console.log('singlePAge', country)
   if (!country) {
     return <div>No country</div>
   }
@@ -30,9 +31,12 @@ const SingleCountry = () => {
         Go home
       </button>
       <div>
-        {country.name}
-        {country.region}
-        {country.population}
+        <ViewCountry
+          name={country.name}
+          region={country.region}
+          population={country.population}
+          language={country.languages.map((lang: any) => lang.name)}
+        />
       </div>
     </div>
   )

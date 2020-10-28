@@ -1,20 +1,30 @@
 import React from 'react'
 
-import { HeaderProps } from '../../types'
-
+/* import { HeaderProps } from '../../types'
+ */
 import './Header.scss'
 
-export default function Header({ setActiveFilter }: HeaderProps) {
+export default function Header({ setActiveFilter }: any) {
   return (
     <div className="header">
       <ul className="HeadTableRow">
-        <li>Flag</li>
         <li>
-          <button onClick={() => setActiveFilter}>Name</button>
+          <button onClick={() => setActiveFilter('flag')}>Flag</button>
+        </li>{' '}
+        <li>
+          <button onClick={() => setActiveFilter('name')}>Name</button>
         </li>
-        <li>Language</li>
-        <li>Population</li>
-        <li>Region</li>
+        <li>
+          <button onClick={() => setActiveFilter('language')}>Language</button>
+        </li>
+        <li>
+          <button onClick={() => setActiveFilter('population')}>
+            Population
+          </button>
+        </li>
+        <li>
+          <button onClick={() => setActiveFilter('region')}>Region</button>
+        </li>
       </ul>
     </div>
   )
