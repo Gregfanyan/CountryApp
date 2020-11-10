@@ -12,11 +12,13 @@ function ViewCountry({
   console.log(language)
   return (
     <div>
-      {name}
-      {population}
-      {region}
-      {language}
-      <img src={flagUrl} alt="flag" />
+      <div> {name}</div>
+      <div> {population}</div>
+      <div> {region}</div>
+      <div> {language}</div>
+      <div>
+        <img src={flagUrl} alt="flag" />
+      </div>
     </div>
   )
 }
