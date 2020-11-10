@@ -6,11 +6,15 @@ const initialState = {
 }
 
 export const themeReducer = (state: any = initialState, action: any) => {
-  switch (action.type){
-  case Actions.APPLY_THEME:
-    return Object.assign({}, {
-      theme: action.payload
-    })
-  default: return state
+  switch (action.type) {
+    case Actions.APPLY_THEME:
+      return Object.assign(
+        {},
+        {
+          theme: action.payload,
+        }
+      )
+    default:
+      return state
   }
 }

@@ -7,8 +7,7 @@ import SingleCountry from './pages/SingleCountry'
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={Home} />
-    <Route path="/TableRow/:id" component={SingleCountry}
-    />
+    <Route path="/TableRow/:id" component={SingleCountry} />
   </Switch>
 )
 export default Routes

@@ -25,7 +25,6 @@ export default function useCountries(search: string, activeFilter: any) {
 
   useEffect(() => {
     sortCountry(data)
-    console.log(activeFilter)
   }, [activeFilter, data, sortCountry])
 
   const sortCountry = (countries: any) => {

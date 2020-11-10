@@ -36,6 +36,7 @@ const SingleCountry = () => {
           region={country.region}
           population={country.population}
           language={country.languages.map((lang: any) => lang.name)}
+          flagUrl={country.flag}
         />
       </div>
     </div>

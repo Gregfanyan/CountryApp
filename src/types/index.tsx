@@ -3,6 +3,7 @@ export type CountryProps = {
   name: string
   region: string
   language: string
+  flagUrl: string
 }
 
 export type RouteParam = {
