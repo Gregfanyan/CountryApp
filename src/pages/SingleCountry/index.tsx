@@ -6,7 +6,7 @@ import { RouteParam } from '../../types'
 import ViewCountry from '../../components/ViewCountry'
 
 const SingleCountry = () => {
-  const [search, setSearch] = useState('')
+  const [search] = useState('')
   const [data] = useCountries(search, '')
   const { id } = useParams<RouteParam>()
 
