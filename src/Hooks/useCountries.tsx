@@ -23,10 +23,6 @@ export default function useCountries(search: string, activeFilter: any) {
     fetchData()
   }, [])
 
-  useEffect(() => {
-    sortCountry(data)
-  }, [activeFilter, data, sortCountry])
-
   const sortCountry = (countries: any) => {
     const filter = activeFilter.toLowerCase()
     switch (filter) {
@@ -62,6 +58,10 @@ export default function useCountries(search: string, activeFilter: any) {
         break
     }
   }
+
+  useEffect(() => {
+    sortCountry(data)
+  }, [activeFilter, data, sortCountry])
 
   return [data]
 }

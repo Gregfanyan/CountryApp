@@ -39,7 +39,8 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "lint": "eslint --fix '**/*.{ts,tsx}'"
+    "lint": "npx eslint --max-warnings=0 '**/*.{ts,tsx}'"
+
   },
   "eslintConfig": {
     "extends": "react-app"
