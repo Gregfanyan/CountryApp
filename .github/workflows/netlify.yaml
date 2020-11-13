@@ -38,7 +38,7 @@ jobs:
       NETLIFY_AUTH_TOKEN: ${{secrets.NETLIFY_AUTH_TOKEN}}
      with: 
       args: deploy --dir=build --prod
-package:
+ package:
     runs-on: ubuntu-latest
     needs: test
     steps:
