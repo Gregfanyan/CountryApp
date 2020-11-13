@@ -33,7 +33,7 @@ export default function TableRow({
       <td>{population}</td>
       <td>{region}</td>
       <td>
-        <button className="AddButton">ADD</button>
+        <button className="AddButton">ADD TO CART</button>
       </td>
     </tr>
   )
