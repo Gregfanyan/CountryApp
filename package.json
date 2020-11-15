@@ -40,7 +40,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "lint": "npx eslint --max-warnings=0 '**/*.{ts,tsx}'"
-
   },
   "eslintConfig": {
     "extends": "react-app"

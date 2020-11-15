@@ -64,7 +64,7 @@ export default function useCountries(search: string, activeFilter: any) {
 
   useEffect(() => {
     sortCountry(data)
-  }, [activeFilter, data, sortCountry])
+  })
 
   return [data]
 }
