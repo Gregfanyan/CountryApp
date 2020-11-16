@@ -1,7 +1,5 @@
 import React from 'react'
 
-/* import { HeaderProps } from '../../types'
- */
 import './Header.scss'
 
 export default function Header({ setActiveFilter }: any) {
