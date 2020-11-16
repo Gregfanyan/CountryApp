@@ -47,11 +47,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build docker image
-        run: docker builder build -t gregfan/countryapp .
+        run: docker builder build -t gregfan/countryapp
 
       - name: Login to docker hub
         run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push docker image to docker hub
-        run: docker push gregfan/countryapp .
+        run: docker push gregfan/countryapp
  
