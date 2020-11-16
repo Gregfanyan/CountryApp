@@ -1,4 +1,3 @@
-import { string } from 'yup'
 import { Product } from './ProductType'
 
 export * from './ProductType'
