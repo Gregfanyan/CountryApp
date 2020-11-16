@@ -1,15 +1,6 @@
 import React from 'react'
 
-import { CountryProps } from '../../types'
-
-function ViewCountry({
-  name,
-  region,
-  population,
-  language,
-  flagUrl,
-}: CountryProps) {
-  console.log(language)
+function ViewCountry({ name, region, population, language, flagUrl }: any) {
   return (
     <div>
       <div> {name}</div>

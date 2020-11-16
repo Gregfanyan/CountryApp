@@ -2,7 +2,7 @@ import React from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { useSelector } from 'react-redux'
 
-import ThemeSelector from '../Themes/Buttons'
+import ThemeSelector from '../Themes'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 function Main() {
-  const theme = useSelector((state: any) => state.theme)
+  const theme = useSelector((state: any) => state.theme.theme)
 
   return (
     <ThemeProvider theme={theme}>

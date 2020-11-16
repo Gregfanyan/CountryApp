@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 
 import { darkTheme, lightTheme, partyTheme } from './Themes'
-import { applyTheme } from '../../redux/actions/themeActions'
+import { applyTheme } from '../../redux/Theme/ThemeActions'
 
 import './Buttons.scss'
 

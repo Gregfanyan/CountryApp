@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
-import useCountries from '../../Hooks/useCountries'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { useParams, useHistory } from 'react-router-dom'
-import { RouteParam } from '../../types'
 
+import { RouteParam } from '../../types'
 import ViewCountry from '../../components/ViewCountry'
+import { AppState } from '../../types/ProductType'
 
 const SingleCountry = () => {
-  const [search] = useState('')
-  const [data] = useCountries(search, '')
   const { id } = useParams<RouteParam>()
+  const country = useSelector((state: AppState) =>
+    state.products.products.find((p) => p.name === id)
+  )
 
   let history = useHistory()
 
@@ -20,10 +22,10 @@ const SingleCountry = () => {
     }
   }
 
-  const country = data.find((country: any) => country.name === id)
   if (!country) {
     return <div>No country</div>
   }
+  const { name, flag, languages, region, population } = country
 
   return (
     <div>
@@ -32,11 +34,19 @@ const SingleCountry = () => {
       </button>
       <div>
         <ViewCountry
-          name={country.name}
-          region={country.region}
-          population={country.population}
-          language={country.languages.map((lang: any) => lang.name)}
-          flagUrl={country.flag}
+          name={name}
+          region={region}
+          population={population}
+          language={
+            languages &&
+            languages.map((lang: any, index) => (
+              <div key={index}>
+                {lang.name}
+                <br />
+              </div>
+            ))
+          }
+          flagUrl={flag}
         />
       </div>
     </div>

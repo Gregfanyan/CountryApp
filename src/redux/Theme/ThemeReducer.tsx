@@ -1,5 +1,5 @@
-import * as Actions from '../actions/themeActions'
 import { darkTheme } from '../../ThemeSelector/Themes/Themes'
+import { APPLY_THEME } from '../../types/ProductType'
 
 const initialState = {
   theme: darkTheme,
@@ -7,7 +7,7 @@ const initialState = {
 
 export const themeReducer = (state: any = initialState, action: any) => {
   switch (action.type) {
-    case Actions.APPLY_THEME:
+    case APPLY_THEME:
       return Object.assign(
         {},
         {
