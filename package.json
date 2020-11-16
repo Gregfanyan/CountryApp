@@ -17,6 +17,8 @@
     "@types/redux-saga": "^0.10.5",
     "@types/redux-thunk": "^2.1.0",
     "@types/styled-components": "^5.1.3",
+    "@types/yup": "^0.29.9",
+    "axios": "^0.21.0",
     "create-use-context": "^1.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -30,7 +32,8 @@
     "rxjs-compat": "^6.6.3",
     "sass": "^1.26.10",
     "styled-components": "^5.2.0",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "yup": "^0.29.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,7 +43,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "lint": "npx eslint --max-warnings=0 '**/*.{ts,tsx}'"
-
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -60,7 +62,8 @@
   "devDependencies": {
     "gh-pages": "^3.1.0",
     "husky": "^4.2.3",
-    "lint-staged": "^10.0.7"
+    "lint-staged": "^10.0.7",
+    "redux-devtools-extension": "^2.13.8"
   },
   "husky": {
     "hooks": {

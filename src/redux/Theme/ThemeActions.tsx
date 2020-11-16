@@ -1,4 +1,4 @@
-export const APPLY_THEME = 'APPLY_THEME'
+import { APPLY_THEME } from '../../types/ProductType'
 
 export const applyTheme = (theme: any) => {
   return {
