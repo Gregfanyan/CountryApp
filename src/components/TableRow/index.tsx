@@ -1,40 +1,45 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 import Flag from '../Flag'
-import { TableRowProps } from '../../types'
+import { addProduct } from '../../redux'
 
 import './tableRow.scss'
 
-export default function TableRow({
-  flagUrl,
-  countryName,
-  languages,
-  population,
-  region,
-}: TableRowProps) {
-  return (
-    <tr className="tableRow">
-      <td>
-        <Flag flag={flagUrl} />
-      </td>
-      <td>
-        <Link
-          to={`/TableRow/${countryName}`}
-          style={{ color: 'inherit', textDecoration: 'inherit' }}
-        >
-          {countryName}
-        </Link>
-      </td>
-      <td>
-        {languages &&
-          languages.map((lang: any) => <li key={lang.name}>{lang.name}</li>)}
-      </td>
-      <td>{population}</td>
-      <td>{region}</td>
-      <td>
-        <button className="AddButton">ADD TO CART</button>
-      </td>
-    </tr>
-  )
+export default function TableRow({ countries }: any) {
+    const dispatch = useDispatch()
+
+    const handleAddProduct = () => {
+        dispatch(addProduct(countries))
+    }
+    const { flag, name, languages, population, region } = countries
+    return (
+        <tr className="tableRow">
+            <td>
+                <Flag flag={flag} />
+            </td>
+            <td>
+                <Link
+                    to={`/TableRow/${name}`}
+                    style={{ color: 'inherit', textDecoration: 'inherit' }}
+                >
+                    {name}
+                </Link>
+            </td>
+            <td>
+                {languages &&
+                    languages.map((lang: any) => (
+                        <li key={lang.name}>{lang.name}</li>
+                    ))}
+            </td>
+            <td>{population}</td>
+            <td>{region}</td>
+            <td>
+                <button className="AddButton" onClick={handleAddProduct}>
+                    ADD TO CART
+                </button>
+            </td>
+        </tr>
+    )
 }
