@@ -63,8 +63,8 @@ export default function useCountries(search: string, activeFilter: any) {
             }
         }
 
-        sortCountry(data)
-    }, [activeFilter, data])
+        setData(sortCountry)
+    }, [activeFilter])
 
     return [data]
 }
