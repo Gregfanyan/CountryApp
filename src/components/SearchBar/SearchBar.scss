@@ -30,9 +30,11 @@ button:focus {
 }
 
  .cart{
-  display:flex;
-  justify-content: flex-end; 
-  right:1
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 10%;
+  margin-top: 10px;
 } 
 
 @media screen and (max-width: 800px) {
