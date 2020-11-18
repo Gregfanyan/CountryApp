@@ -43,5 +43,5 @@ export type MainTableProps = {
 }
 
 export type HeaderProps = {
-    setActiveFilter?: Function
+    setActiveFilter: any
 }

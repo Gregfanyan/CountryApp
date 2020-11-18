@@ -1,43 +1,36 @@
 import React from 'react'
-import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 
 import { darkTheme, lightTheme, partyTheme } from './Themes'
 import { applyTheme } from '../../redux/Theme/ThemeActions'
-
-import './Buttons.scss'
-
-const StyledButton = styled.button`
-  color: ${(props) => props.theme.textColor};
-  background-color: ${(props) => props.theme.primary};
-`
+import { StyledButton, ButtonDiv } from './StyledThemes'
 
 const ThemeSelector = () => {
-  const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
-  const changeTheme = (theme: any) => {
-    dispatch(applyTheme(theme))
-  }
+    const changeTheme = (theme: any) => {
+        dispatch(applyTheme(theme))
+    }
 
-  return (
-    <div className="styleButtons">
-      <StyledButton
-        style={{ backgroundColor: '#333333' }}
-        className="btn"
-        onClick={() => changeTheme(darkTheme)}
-      ></StyledButton>
-      <StyledButton
-        style={{ backgroundColor: '#C9C9C9' }}
-        className="btn"
-        onClick={() => changeTheme(lightTheme)}
-      ></StyledButton>
-      <StyledButton
-        style={{ backgroundColor: '#490866' }}
-        className="btn"
-        onClick={() => changeTheme(partyTheme)}
-      ></StyledButton>
-    </div>
-  )
+    return (
+        <ButtonDiv>
+            <StyledButton
+                style={{ backgroundColor: '#333333' }}
+                className="btn"
+                onClick={() => changeTheme(darkTheme)}
+            ></StyledButton>
+            <StyledButton
+                style={{ backgroundColor: '#C9C9C9' }}
+                className="btn"
+                onClick={() => changeTheme(lightTheme)}
+            ></StyledButton>
+            <StyledButton
+                style={{ backgroundColor: '#490866' }}
+                className="btn"
+                onClick={() => changeTheme(partyTheme)}
+            ></StyledButton>
+        </ButtonDiv>
+    )
 }
 
 export default ThemeSelector

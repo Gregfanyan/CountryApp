@@ -37,7 +37,7 @@ export default function TableRow({ countries }: any) {
             <td>{region}</td>
             <td>
                 <button className="AddButton" onClick={handleAddProduct}>
-                    ADD TO CART
+                    SAVE
                 </button>
             </td>
         </tr>

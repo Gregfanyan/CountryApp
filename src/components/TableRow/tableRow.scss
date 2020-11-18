@@ -1,5 +1,5 @@
 .tableRow {
-  width: 100%;
+  max-width: 100%;
   vertical-align: auto;
   color: rgb(8, 64, 78);
   font-family: Helvetica Neue;
@@ -33,7 +33,7 @@
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1),
     0px 1px 3px rgba(0, 0, 0, 0.3);
   color: #fff;
-  font-size: 16px;
+  font-size: 15px;
   font-family: Helvetica Neue;
   font-weight: 900;
   font-style: normal;
@@ -48,4 +48,11 @@
   position: relative;
   top: 1px;
   background: grey;
+}
+
+@media screen and (max-width: 800px) {
+  .HeadTableRow {
+    display: none;
+    
+  }
 }
