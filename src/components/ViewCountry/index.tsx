@@ -9,7 +9,7 @@ function ViewCountry({ country }: any) {
             <Card>
                 <Image
                     src={flag}
-                    alt="product"
+                    alt="countries"
                     wrapped
                     ui={false}
                     size="small"
@@ -20,7 +20,14 @@ function ViewCountry({ country }: any) {
                 </Card.Content>
                 <Card.Content extra>population: {population}</Card.Content>
                 <Card.Content extra>
-                    languages: {languages.map((lang: any) => lang.name)}
+                    languages:{' '}
+                    {languages &&
+                        languages.map((lang: any, index: any) => (
+                            <div key={index}>
+                                {lang.name}
+                                <br />
+                            </div>
+                        ))}
                 </Card.Content>
             </Card>
         </Card.Group>

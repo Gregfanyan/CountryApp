@@ -1,16 +1,16 @@
 import React from 'react'
-import { Menu, Icon, Button } from 'semantic-ui-react'
+import { Menu, Icon } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import { AppState } from '../../types/ProductType'
+import { AppState } from '../../types/CountryType'
 
-import { SearchBarProps } from '../../types'
+import { SearchBarProps } from '../../types/ui'
 
 import './SearchBar.scss'
 
 export default function Searchbar({ handleChange, search }: SearchBarProps) {
-    const counter = useSelector((state: AppState) => state.products.counter)
+    const counter = useSelector((state: AppState) => state.countries.counter)
 
     return (
         <div className="SearchBar">
@@ -21,12 +21,10 @@ export default function Searchbar({ handleChange, search }: SearchBarProps) {
                 value={search}
                 onChange={handleChange}
             />
-            <Menu.Item as={Link} to="cart" className="cart">
-                <Button color="black">
-                    <Icon name="shopping cart">
-                        <div>{counter}</div>
-                    </Icon>
-                </Button>
+            <Menu.Item as={Link} to="cart">
+                <Icon name="shopping cart" className="cart" size="big">
+                    <div className="counter">{counter}</div>
+                </Icon>
             </Menu.Item>
         </div>
     )

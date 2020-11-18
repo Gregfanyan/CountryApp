@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlagPropsType } from '../../types'
+import { FlagPropsType } from '../../types/ui'
 
 import './flag.scss'
 

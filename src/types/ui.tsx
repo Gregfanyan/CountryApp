@@ -1,6 +1,6 @@
-import { Product } from './ProductType'
+import { Country } from './CountryType'
 
-export * from './ProductType'
+export * from './CountryType'
 
 export type HomeProps = {
     query: string
@@ -19,11 +19,11 @@ export type handleItemClick = {
 }
 
 export type CartItemProps = {
-    cart: Product
+    cart: Country
 }
 
-export type ViewProductProps = {
-    product: Product
+export type ViewCountryProps = {
+    country: Country
 }
 
 export type CountryProps = {

@@ -1,31 +1,33 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { Product, AppState } from '../types/ProductType'
-import { fetchProducts } from '../redux/Products/ProductActions'
+import { Country, AppState } from '../types/CountryType'
+import { fetchCountries } from '../redux/Countries/CountryActions'
 
 export default function useCountries(search: string, activeFilter: any) {
     const [data, setData] = useState<any>([])
-    const products = useSelector((state: AppState) => state.products.products)
+    const countries = useSelector(
+        (state: AppState) => state.countries.countries
+    )
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchProducts())
+        dispatch(fetchCountries())
     }, [dispatch])
 
     useEffect(() => {
-        setData(products)
-    }, [products])
+        setData(countries)
+    }, [countries])
 
     useEffect(() => {
-        const result = [...products].filter((item: any) =>
+        const result = [...countries].filter((item: any) =>
             item.name.toLowerCase().includes(search.toLowerCase())
         )
         setData(result)
-    }, [products, search])
+    }, [countries, search])
 
     useEffect(() => {
-        const sortCountry = (countries: Product[]) => {
+        const sortCountry = (countries: Country[]) => {
             const filter = activeFilter.toLowerCase()
             switch (filter) {
                 case 'flag':

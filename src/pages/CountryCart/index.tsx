@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { Icon, Button, Card } from 'semantic-ui-react'
 
-import { AppState } from '../../types/ProductType'
+import { AppState } from '../../types/CountryType'
 import CartItem from '../../components/CartItem'
 
-function ProductCart() {
-    const cartProduct = useSelector((state: AppState) => state.products.inCart)
+function CountryCart() {
+    const cartCountry = useSelector((state: AppState) => state.countries.inCart)
     const history = useHistory()
 
     function handleClick() {
@@ -24,11 +24,11 @@ function ProductCart() {
                 <Icon name="home"> </Icon>
                 Home
             </Button>
-            {cartProduct.length > 0 ? (
+            {cartCountry.length > 0 ? (
                 <>
                     <Card.Content></Card.Content>
-                    {cartProduct &&
-                        cartProduct.map((cart, index) => {
+                    {cartCountry &&
+                        cartCountry.map((cart, index) => {
                             return <CartItem key={index} cart={cart} />
                         })}
                 </>
@@ -39,4 +39,4 @@ function ProductCart() {
     )
 }
 
-export default ProductCart
+export default CountryCart

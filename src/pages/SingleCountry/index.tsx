@@ -2,14 +2,14 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useParams, useHistory } from 'react-router-dom'
 
-import { RouteParam } from '../../types'
+import { RouteParam } from '../../types/ui'
 import ViewCountry from '../../components/ViewCountry'
-import { AppState } from '../../types/ProductType'
+import { AppState } from '../../types/CountryType'
 
 const SingleCountry = () => {
     const { id } = useParams<RouteParam>()
     const country = useSelector((state: AppState) =>
-        state.products.products.find((p) => p.name === id)
+        state.countries.countries.find((p) => p.name === id)
     )
 
     let history = useHistory()

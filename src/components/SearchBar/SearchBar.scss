@@ -30,12 +30,22 @@ button:focus {
 }
 
  .cart{
-  display: inline-block;
   position: absolute;
-  top: 0;
-  right: 10%;
-  margin-top: 10px;
+  top: 30px;
+  right: 12%;
+  background-color: #333333;
+  padding: 10px;
+  
+  
 } 
+
+.counter{
+  position: absolute;
+  top:-7px;
+  left:0;
+   margin-left: 20px;
+
+}
 
 @media screen and (max-width: 800px) {
   .SearchBar {

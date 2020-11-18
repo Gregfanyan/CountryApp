@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import ProductReducer from './Products/ProductReducer'
+import ProductReducer from './Countries/CountryReducer'
 import { themeReducer } from './Theme/ThemeReducer'
 
 const rootReducer = combineReducers({
-  products: ProductReducer,
-  theme: themeReducer,
+    countries: ProductReducer,
+    theme: themeReducer,
 })
 
 export default rootReducer

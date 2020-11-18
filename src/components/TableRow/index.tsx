@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import Flag from '../Flag'
-import { addProduct } from '../../redux'
+import { addCountry } from '../../redux'
 
 import './tableRow.scss'
 
 export default function TableRow({ countries }: any) {
     const dispatch = useDispatch()
 
-    const handleAddProduct = () => {
-        dispatch(addProduct(countries))
+    const handleAddCountry = () => {
+        dispatch(addCountry(countries))
     }
     const { flag, name, languages, population, region } = countries
     return (
@@ -36,7 +36,7 @@ export default function TableRow({ countries }: any) {
             <td>{population}</td>
             <td>{region}</td>
             <td>
-                <button className="AddButton" onClick={handleAddProduct}>
+                <button className="AddButton" onClick={handleAddCountry}>
                     SAVE
                 </button>
             </td>
