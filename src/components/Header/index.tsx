@@ -1,10 +1,8 @@
 import React from 'react'
 
-import { HeaderProps } from '../../types'
-
 import './Header.scss'
 
-export default function Header({ setActiveFilter }: HeaderProps) {
+export default function Header({ setActiveFilter }: any) {
     return (
         <div className="header">
             <ul className="HeadTableRow">
