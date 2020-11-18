@@ -23,12 +23,14 @@ function CartItem({ cart }: CartItemProps) {
                     ui={false}
                     size="small"
                 />
-                <Card.Content>
+                <Card.Content textAlign="center">
                     <Card.Header>{name}</Card.Header>
                     <Card.Description>{region}</Card.Description>
                 </Card.Content>
-                <Card.Content extra>population: {population}</Card.Content>
-                <Card.Content extra>
+                <Card.Content extra textAlign="center">
+                    population: {population}
+                </Card.Content>
+                <Card.Content extra textAlign="center">
                     languages:
                     {languages &&
                         languages.map((lang: any, index: number) => (

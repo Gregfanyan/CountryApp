@@ -5,6 +5,7 @@ import { Icon, Button, Card } from 'semantic-ui-react'
 
 import { AppState } from '../../types/CountryType'
 import CartItem from '../../components/CartItem'
+import './CountryCart.scss'
 
 function CountryCart() {
     const cartCountry = useSelector((state: AppState) => state.countries.inCart)
@@ -19,11 +20,13 @@ function CountryCart() {
     }
 
     return (
-        <div>
-            <Button primary onClick={handleClick}>
-                <Icon name="home"> </Icon>
-                Home
-            </Button>
+        <div className="bgColor">
+            <Card.Group itemsPerRow={4} centered style={{ margin: 0 }}>
+                <Button primary onClick={handleClick}>
+                    <Icon name="home"> </Icon>
+                    Home
+                </Button>
+            </Card.Group>
             {cartCountry.length > 0 ? (
                 <>
                     <Card.Content></Card.Content>
@@ -33,7 +36,7 @@ function CountryCart() {
                         })}
                 </>
             ) : (
-                <div>cart is empty</div>
+                <div className="infoText">cart is empty</div>
             )}
         </div>
     )
