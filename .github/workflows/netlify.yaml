@@ -58,4 +58,4 @@ jobs:
      run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
 
    - name: Push docker image to docker hub
-refactor     run: docker push gregfan/countryapp:latest 
+     run: docker push gregfan/countryapp:latest 
