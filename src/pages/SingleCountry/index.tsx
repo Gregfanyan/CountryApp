@@ -15,7 +15,7 @@ const SingleCountry = () => {
 
     return (
         <div className="singleItem">
-            <div>
+            <div className="singleItem">
                 <ViewCountry country={country} />
             </div>
         </div>
