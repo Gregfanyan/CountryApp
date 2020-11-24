@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import { Menu, Icon } from 'semantic-ui-react'
 
 import Flag from '../Flag'
 import { addCountry } from '../../redux'
@@ -39,6 +40,16 @@ export default function TableRow({ countries }: any) {
                 <button className="AddButton" onClick={handleAddCountry}>
                     SAVE
                 </button>
+            </td>
+            <td>
+                <Menu.Item
+                    className="InfoButton"
+                    as={Link}
+                    to={`/TableRow/${name}`}
+                    size="mini"
+                >
+                    <Icon name="info circle" size="big"></Icon>
+                </Menu.Item>
             </td>
         </tr>
     )

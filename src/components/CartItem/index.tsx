@@ -35,7 +35,7 @@ function CartItem({ cart }: CartItemProps) {
                     <Card.Content extra textAlign="center">
                         languages:
                         {languages &&
-                            languages.map((lang: any, index: number) => (
+                            languages.map((lang: any, index) => (
                                 <div key={index}>
                                     {lang.name}
                                     <br />
