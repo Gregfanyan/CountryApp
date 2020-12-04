@@ -18,8 +18,18 @@ export type handleItemClick = {
     name: any
 }
 
+export type Provider = {
+    connected: boolean
+    type: string
+}
+
 export type CartItemProps = {
     cart: Country
+}
+
+export type LangItemProps = {
+    lang: Country
+    index: number
 }
 
 export type ViewCountryProps = {
@@ -68,5 +78,6 @@ export type MainTableProps = {
 }
 
 export type HeaderProps = {
-    setActiveFilter?: Function
+    connected: boolean
+    type: string
 }

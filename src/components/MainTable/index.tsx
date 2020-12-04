@@ -2,22 +2,36 @@ import React from 'react'
 
 import Header from '../Header'
 import TableRow from '../TableRow'
+import Pagination from '../Pagination'
 
 import './mainTable.scss'
 
-export default function MainTable({ countries, setActiveFilter }: any) {
+export default function MainTable({
+    currentCountry,
+    currentPage,
+    countryPerPage,
+    countries,
+    paginate,
+    setActiveFilter,
+}: any) {
     return (
         <div>
             <Header setActiveFilter={setActiveFilter} />
 
             <table className="table">
                 <tbody className="tableBody">
-                    {countries &&
-                        countries.map((country?: any) => (
+                    {currentCountry &&
+                        currentCountry.map((country?: any) => (
                             <TableRow key={country.name} countries={country} />
                         ))}
                 </tbody>
             </table>
+            <Pagination
+                countryPerPage={countryPerPage}
+                totalCountries={countries?.length}
+                paginate={paginate}
+                currentPage={currentPage}
+            />
         </div>
     )
 }

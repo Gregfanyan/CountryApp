@@ -11,6 +11,15 @@ export default function Home() {
     const [activeFilter, setActiveFilter] = useState('')
     const [search, setSearch] = useState('')
     const [data] = useCountries(search, activeFilter)
+    const [currentPage, setCurrentPage] = useState(1)
+    const [countryPerPage] = useState(20)
+
+    const indexOfLastCountry = currentPage * countryPerPage
+    const indexOfFirstCountry = indexOfLastCountry - countryPerPage
+    const currentCountry = data?.slice(indexOfFirstCountry, indexOfLastCountry)
+
+    const paginate = (pageNumber: any) => setCurrentPage(pageNumber)
+
     const handleChange: React.ReactEventHandler<HTMLInputElement> = (e) => {
         setSearch(e.currentTarget.value)
     }
@@ -22,7 +31,14 @@ export default function Home() {
                 handleChange={handleChange}
                 search={search as searchProps}
             />
-            <MainTable countries={data} setActiveFilter={setActiveFilter} />
+            <MainTable
+                countries={data}
+                currentCountry={search === '' ? currentCountry : data}
+                currentPage={!search ? currentPage : null}
+                paginate={paginate}
+                countryPerPage={countryPerPage}
+                setActiveFilter={setActiveFilter}
+            />
         </div>
     )
 }
