@@ -2,56 +2,41 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Card, Image, Button } from 'semantic-ui-react'
 
-import { CartItemProps } from '../../types/ui'
 import { removeCountry } from '../../redux'
 import './CartItem.scss'
 
-function CartItem({ cart }: CartItemProps) {
-    const { name, flag, population, region, languages } = cart
+const CardStyle = { display: 'inline-block', marginRight: '10px' }
 
+function CartItem({ cart }: any) {
+    const { name, flag, population, region, languages } = cart
+    const language = languages[0]
     const dispatch = useDispatch()
 
     const handleRemoveCountry = () => {
         dispatch(removeCountry(cart))
     }
     return (
-        <div className="bgColor">
-            <Card.Group itemsPerRow={4} centered>
-                <Card>
-                    <Image
-                        src={flag}
-                        alt="countries"
-                        wrapped
-                        ui={false}
-                        size="small"
-                    />
-                    <Card.Content textAlign="center">
-                        <Card.Header>{name}</Card.Header>
-                        <Card.Description>{region}</Card.Description>
-                    </Card.Content>
-                    <Card.Content extra textAlign="center">
-                        population: {population}
-                    </Card.Content>
-                    <Card.Content extra textAlign="center">
-                        languages:
-                        {languages &&
-                            languages.map((lang: any, index) => (
-                                <div key={index}>
-                                    {lang.name}
-                                    <br />
-                                </div>
-                            ))}
-                    </Card.Content>
-                    <Card.Content extra>
-                        <div className="ui two buttons">
-                            <Button color="red" onClick={handleRemoveCountry}>
-                                remove
-                            </Button>
-                        </div>
-                    </Card.Content>
-                </Card>
-            </Card.Group>
-        </div>
+        <Card style={CardStyle}>
+            <Image src={flag} alt="countries" wrapped ui={false} size="small" />
+            <Card.Content textAlign="center">
+                <Card.Header>{name}</Card.Header>
+                <Card.Description>{region}</Card.Description>
+            </Card.Content>
+            <Card.Content extra textAlign="center">
+                population: {population}
+            </Card.Content>
+            <Card.Content extra textAlign="center">
+                language:
+                {language.name}
+            </Card.Content>
+            <Card.Content extra>
+                <div className="ui two buttons">
+                    <Button color="red" onClick={handleRemoveCountry}>
+                        remove
+                    </Button>
+                </div>
+            </Card.Content>
+        </Card>
     )
 }
 

@@ -1,55 +1,52 @@
 .input[type='text'] {
-  width: 40%;
-  padding: 12px 20px;
-  margin: 20px 0;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
+    width: 40%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
 }
 
 .input:focus {
-  border: 2px solid #555;
+    border: 2px solid #555;
 }
 
 .input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-  outline: none;
+    outline: none;
 }
 
 .SearchBar {
-  width: 65%;
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 35%;
-  margin-top: 10px;
+    width: 65%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    margin-top: 10px;
 }
 
- .cart{
-  position: absolute;
-  top: 30px;
-  right: 12%;
-  padding: 10px;
-  
-  
-} 
+.cart {
+    position: absolute;
+    top: 30px;
+    right: 12%;
+    padding: 10px;
+}
 
-.counter{
-  position: absolute;
-  top:-7px;
-  left:0;
-   margin-left: 20px;
-
+.counter {
+    position: absolute;
+    top: -9px;
+    left: 0;
+    margin-left: 20px;
 }
 
 @media screen and (max-width: 800px) {
-  .SearchBar {
-    position: relative;
-    width: 100%;
-    margin: 0;
-  }
+    .SearchBar {
+        position: relative;
+        width: 100%;
+        margin: 0;
+    }
 }

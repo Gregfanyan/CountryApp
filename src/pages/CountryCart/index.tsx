@@ -21,20 +21,18 @@ function CountryCart() {
 
     return (
         <div className="bgColor">
-            <Card.Group itemsPerRow={4} centered style={{ margin: 0 }}>
+            <Card.Group centered style={{ display: 'inline-block', margin: 0 }}>
                 <Button primary onClick={handleClick}>
-                    <Icon name="home"> </Icon>
-                    Home
+                    <Icon name="arrow left"> </Icon>
                 </Button>
             </Card.Group>
             {cartCountry.length > 0 ? (
-                <>
-                    <Card.Content></Card.Content>
+                <Card.Group centered>
                     {cartCountry &&
                         cartCountry.map((cart, index) => {
                             return <CartItem key={index} cart={cart} />
                         })}
-                </>
+                </Card.Group>
             ) : (
                 <div className="infoText">cart is empty</div>
             )}
