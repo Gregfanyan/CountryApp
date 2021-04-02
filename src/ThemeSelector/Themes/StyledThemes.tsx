@@ -18,6 +18,10 @@ export const StyledButton = styled.button`
         box-shadow: 0 5px #666;
         transform: translateY(4px);
     }
+    @media (max-width: 800px) {
+        height: 25px;
+        width: 25px;
+    }
 `
 
 export const ButtonDiv = styled.div`

@@ -5,7 +5,7 @@ import './Header.scss'
 export default function Header({ setActiveFilter }: any) {
     return (
         <div className="header">
-            <ul className="HeadTableRow">
+            <ul className="headTableRow">
                 <li>
                     <button onClick={() => setActiveFilter('flag')}>
                         Flag
