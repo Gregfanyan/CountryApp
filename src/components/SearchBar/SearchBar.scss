@@ -3,14 +3,13 @@
     padding: 12px 20px;
     margin: 20px 0;
     box-sizing: border-box;
-    border: 3px solid #ccc;
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
-}
-
-.input:focus {
-    border: 2px solid #555;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0px 5px 20px rgb(153, 176, 201);
+    outline: none;
 }
 
 .input:focus,
@@ -31,7 +30,7 @@ button:focus {
 
 .cart {
     position: absolute;
-    top: 30px;
+    top: 10px;
     right: 12%;
     padding: 10px;
 }
@@ -48,5 +47,16 @@ button:focus {
         position: relative;
         width: 100%;
         margin: 0;
+    }
+    .input[type='text'] {
+        position: absolute;
+        width: fit-content;
+        bottom: 25px;
+        left: 10rem;
+    }
+    .cart {
+        position: absolute;
+        top: -40px;
+        left: 16rem;
     }
 }

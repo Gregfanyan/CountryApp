@@ -21,7 +21,7 @@ export default function Searchbar({ handleChange, search }: SearchBarProps) {
                 value={search}
                 onChange={handleChange}
             />
-            <Menu.Item as={Link} to="cart">
+            <Menu.Item as={Link} to="cart" className="cart">
                 <Icon name="shopping cart" className="cart" size="big">
                     <div className="counter">{counter}</div>
                 </Icon>
