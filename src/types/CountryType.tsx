@@ -78,4 +78,5 @@ export type CountryState = {
 export type AppState = {
     countries: CountryState
     filter: ''
+    theme: any
 }

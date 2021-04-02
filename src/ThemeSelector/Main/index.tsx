@@ -4,15 +4,16 @@ import { useSelector } from 'react-redux'
 
 import ThemeSelector from '../Themes'
 import { GlobalStyle } from './StyledMain'
+import { AppState } from '../../types/CountryType'
 
 function Main() {
-    const theme = useSelector((state: any) => state.theme.theme)
+    const theme = useSelector((state: AppState) => state.theme.theme)
 
     return (
         <ThemeProvider theme={theme}>
             <div>
                 <GlobalStyle />
-                <header className="App-header">
+                <header>
                     <ThemeSelector></ThemeSelector>
                 </header>
             </div>
