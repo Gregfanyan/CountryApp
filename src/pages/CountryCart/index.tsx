@@ -20,8 +20,12 @@ function CountryCart() {
     }
 
     return (
-        <div className="bgColor">
-            <Card.Group centered style={{ display: 'inline-block', margin: 0 }}>
+        <div className="container">
+            <Card.Group
+                centered
+                style={{ display: 'inline-block', margin: 0 }}
+                stackable
+            >
                 <Button primary onClick={handleClick}>
                     <Icon name="arrow left"> </Icon>
                 </Button>

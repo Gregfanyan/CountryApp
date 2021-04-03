@@ -16,7 +16,7 @@ function CartItem({ cart }: any) {
         dispatch(removeCountry(cart))
     }
     return (
-        <Card style={CardStyle}>
+        <Card style={CardStyle} stackable>
             <Image src={flag} alt="countries" wrapped ui={false} size="small" />
             <Card.Content textAlign="center">
                 <Card.Header>{name}</Card.Header>

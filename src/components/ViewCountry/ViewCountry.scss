@@ -18,3 +18,8 @@
 .ui.cards>.card>.extra a:not(.ui) {
   color: white;
 }
+
+.container{
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+  min-height: 100vh;
+}

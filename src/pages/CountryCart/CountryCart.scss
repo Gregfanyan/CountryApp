@@ -1,9 +1,9 @@
-.bgColor{
+.container {
     background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
-    height: 100vmin;
+    min-height: 100vh;
 }
 
-.infoText{
+.infoText {
     margin-top: 20px;
     text-align: center;
 }
