@@ -37,7 +37,7 @@ export default function TableRow({ countries }: any) {
             <td>{population}</td>
             <td>{region}</td>
             <td>
-                <button className="AddButton" onClick={handleAddCountry}>
+                <button className="saveButton" onClick={handleAddCountry}>
                     SAVE
                 </button>
             </td>

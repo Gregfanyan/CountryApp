@@ -52,9 +52,12 @@
 
 @media screen and (max-width: 800px) {
     .headTableRow {
-        margin: 2%;
+        margin: 2.3%;
         padding: 0;
         display: grid;
-        grid-gap: 17px;
+        grid-gap: 5px;
+    }
+    .headTableRow li > button {
+        padding: 5px 5px;
     }
 }

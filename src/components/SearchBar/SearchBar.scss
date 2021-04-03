@@ -42,21 +42,33 @@ button:focus {
     margin-left: 20px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
     .SearchBar {
         position: relative;
         width: 100%;
         margin: 0;
+        left: 31%;
     }
     .input[type='text'] {
         position: absolute;
         width: fit-content;
         bottom: 25px;
-        left: 7rem;
+        left: 1rem;
+        width: 40%;
+        padding: 8px 20px;
     }
     .cart {
         position: absolute;
         top: -40px;
+        left: 6.5rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .SearchBar {
+        left: 25%;
+    }
+    .cart {
         left: 13rem;
     }
 }

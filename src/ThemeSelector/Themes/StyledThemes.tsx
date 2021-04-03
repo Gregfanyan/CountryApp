@@ -21,6 +21,8 @@ export const StyledButton = styled.button`
     @media (max-width: 800px) {
         height: 25px;
         width: 25px;
+        margin-left: 5px;
+        padding: 15px;
     }
 `
 
@@ -30,4 +32,7 @@ export const ButtonDiv = styled.div`
     display: inline-block;
     margin-left: 50px;
     margin: 30px;
+    @media (max-width: 800px) {
+        margin-left: 5px;
+    }
 `
