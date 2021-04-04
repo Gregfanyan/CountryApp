@@ -1,21 +1,20 @@
 .tableRow {
-    max-width: 100%;
     vertical-align: auto;
     color: rgb(8, 64, 78);
     font-family: Helvetica Neue;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    border-bottom: 1px solid white;
+    align-items: center;
 }
 
 .tableRow td {
     text-align: center;
-    vertical-align: middle;
-    width: 17.9%;
-    list-style: none;
-    padding: 10px 20px;
-    font-family: Helvetica Neue;
     font-weight: 1000;
     font-style: normal;
     font-size: 20px;
-    border-bottom: 1px solid white;
     color: #c7c1c1;
 }
 
@@ -80,9 +79,30 @@
     top: 1px;
     background: grey;
 }
- @media screen and (max-width: 800px) {
-    .tableRow td  {
-        padding: 10px 7px;
-        font-size: 15px;
+@media screen and (max-width: 800px) {
+    .tableRow {
+        grid-template-columns: 16% 15% 25% 23% 20%;
+        grid-template-rows: repeat(2, 1fr);
     }
-} 
+
+    .tableRow td {
+        font-size: 12px;
+    }
+    .tableRow :nth-child(6) {
+        grid-column: 2/3;
+    }
+
+    .saveButton,
+    .InfoButton {
+        padding: 2px;
+    }
+
+    .InfoButton {
+        padding-right: 0;
+    }
+
+    .tableRow :nth-child(7) {
+        grid-column: 4/5;
+        padding: 5px;
+    }
+}

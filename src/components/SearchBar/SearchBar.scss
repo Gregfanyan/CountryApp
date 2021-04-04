@@ -1,3 +1,15 @@
+.searchContainer {
+    position: relative;
+}
+
+.SearchBar {
+    width: 65%;
+    display: inline-block;
+    position: absolute;
+    bottom: 11px;
+    left: 35%;
+}
+
 .input[type='text'] {
     width: 40%;
     padding: 12px 20px;
@@ -5,7 +17,6 @@
     box-sizing: border-box;
     -webkit-transition: 0.5s;
     transition: 0.5s;
-    outline: none;
     border-radius: 20px;
     border: none;
     box-shadow: 0px 5px 20px rgb(153, 176, 201);
@@ -17,15 +28,6 @@ select:focus,
 textarea:focus,
 button:focus {
     outline: none;
-}
-
-.SearchBar {
-    width: 65%;
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 35%;
-    margin-top: 10px;
 }
 
 .cart {
@@ -46,7 +48,7 @@ button:focus {
     .SearchBar {
         position: relative;
         width: 100%;
-        margin: 0;
+        margin-top: 25px;
         left: 31%;
     }
     .input[type='text'] {

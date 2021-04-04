@@ -14,18 +14,20 @@ export default function Searchbar({ handleChange, search }: SearchBarProps) {
 
     return (
         <div className="searchContainer">
-            <input
-                className="input"
-                type="text"
-                placeholder="search country ..."
-                value={search}
-                onChange={handleChange}
-            />
-            <Menu.Item as={Link} to="cart" className="cart">
-                <Icon name="shopping cart" className="cart" size="big">
-                    <div className="counter">{counter}</div>
-                </Icon>
-            </Menu.Item>
+            <div className="SearchBar">
+                <input
+                    className="input"
+                    type="text"
+                    placeholder="search country ..."
+                    value={search}
+                    onChange={handleChange}
+                />
+                <Menu.Item as={Link} to="cart" className="cart">
+                    <Icon name="shopping cart" className="cart" size="big">
+                        <div className="counter">{counter}</div>
+                    </Icon>
+                </Menu.Item>
+            </div>
         </div>
     )
 }
