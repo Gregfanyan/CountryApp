@@ -6,5 +6,5 @@
  * @returns {string} - unique string
  */
 export function generateKey(prefix: any) {
-  return `${prefix}_${Math.random().toString(36).substr(2, 9)}`
+    return `${prefix}_${Math.random().toString(36).substr(2, 9)}`
 }

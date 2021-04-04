@@ -16,10 +16,11 @@ export default function MainTable({
 }: any) {
     return (
         <div>
-            <Header setActiveFilter={setActiveFilter} />
-
-            <table className="table">
-                <tbody className="tableBody">
+            <table>
+                <thead>
+                    <Header setActiveFilter={setActiveFilter} />
+                </thead>
+                <tbody>
                     {currentCountry &&
                         currentCountry.map((country?: any) => (
                             <TableRow key={country.name} countries={country} />

@@ -13,7 +13,7 @@ export default function Searchbar({ handleChange, search }: SearchBarProps) {
     const counter = useSelector((state: AppState) => state.countries.counter)
 
     return (
-        <div className="SearchBar">
+        <div className="searchContainer">
             <input
                 className="input"
                 type="text"
