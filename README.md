@@ -15,22 +15,24 @@
 
 ## General info
 
-The app uses open source API and allows user search, save and see detailed information about the preferred country.
+A web-based application that fetches the data from an external API and features search,
+filtering, changeable themes, responsiveness and a shopping cart function.
 
 ## Screenshots
 
 ![Example screenshot](./public/img/projectImage.png)
 
-![Example screenshot](./public/img/singleCountry.png)
-
 ## Technologies
 
 -   React.js
 -   Redux
+-   Redux-Thunk
+-   React-Router
 -   Semantic UI
 -   Local Storage
 -   GitHub Actions
 -   Docker
+-   SCSS
 
 ## Setup
 
@@ -43,20 +45,16 @@ List of features ready and TODOs for future development
 -   Search filter
 -   Sorting
 -   View single Country
--   Added Redux
+-   Add to Cart
 -   Remove Country
--   Theme Switcher via Redux
+-   Theme Switcher
 -   Save in Local Storage
-
-To-do list:
-
 -   Responsive Design
 -   Pagination
--   Add useContext
 
 ## Status
 
-Project is: _in progress_
+Project is: Completed
 
 ## Inspiration
 
