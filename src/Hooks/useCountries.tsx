@@ -43,10 +43,11 @@ export default function useCountries(search: string, activeFilter: any) {
                     setData(sortByRegion)
                     break
                 case 'language':
-                    const sortByLanguages = [
-                        ...countries,
-                    ].sort((a: any, b: any) =>
-                        a.languages[0].name.localeCompare(b.languages[0].name)
+                    const sortByLanguages = [...countries].sort(
+                        (a: any, b: any) =>
+                            a.languages[0].name.localeCompare(
+                                b.languages[0].name
+                            )
                     )
                     setData(sortByLanguages)
                     break
@@ -58,10 +59,15 @@ export default function useCountries(search: string, activeFilter: any) {
                     break
                 case 'name':
                     const sortByName = [...countries].sort((a: any, b: any) =>
-                        a.name.localeCompare(b.name)
+                        b.name.localeCompare(a.name)
                     )
                     setData(sortByName)
                     break
+                default:
+                    const sortByNames = [...countries].sort((a: any, b: any) =>
+                        a.name.localeCompare(b.name)
+                    )
+                    setData(sortByNames)
             }
         }
 
