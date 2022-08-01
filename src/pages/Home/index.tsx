@@ -24,7 +24,6 @@ export default function Home() {
         setSearch(e.currentTarget.value)
     }
 
-    console.log('currentCountry', currentCountry)
     return (
         <div>
             <Main />

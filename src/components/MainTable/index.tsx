@@ -4,8 +4,8 @@ import Header from '../Header'
 import TableRow from '../TableRow'
 import Pagination from '../Pagination'
 
-import './mainTable.scss'
 import { Country } from '../../types/CountryType'
+import './mainTable.scss'
 
 const MainTable: FunctionComponent<{
     currentCountry: Country[]
