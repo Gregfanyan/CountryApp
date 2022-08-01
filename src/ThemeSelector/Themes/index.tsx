@@ -4,11 +4,12 @@ import { useDispatch } from 'react-redux'
 import { darkTheme, lightTheme, partyTheme } from './Themes'
 import { applyTheme } from '../../redux/Theme/ThemeActions'
 import { StyledButton, ButtonDiv } from './StyledThemes'
+import { ThemeProps } from '../../types/ui'
 
 const ThemeSelector = () => {
     const dispatch = useDispatch()
 
-    const changeTheme = (theme: any) => {
+    const changeTheme = (theme: ThemeProps) => {
         dispatch(applyTheme(theme))
     }
 

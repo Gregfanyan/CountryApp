@@ -15,7 +15,7 @@ export type SearchBarProps = {
 
 export type handleItemClick = {
     event: KeyboardEvent
-    name: any
+    name: string
 }
 
 export type Provider = {
@@ -75,11 +75,17 @@ export type CountryDetails = {
 }
 
 export type MainTableProps = {
-    countries: any
+    countries: Country
     setActiveFilter: Function
 }
 
 export type HeaderProps = {
     connected: boolean
     type: string
+}
+
+export type ThemeProps = {
+    backgroundColor: string
+    textColor: string
+    primary: string
 }

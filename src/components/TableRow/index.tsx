@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Menu, Icon } from 'semantic-ui-react'
@@ -7,8 +7,9 @@ import Flag from '../Flag'
 import { addCountry } from '../../redux'
 
 import './tableRow.scss'
+import { Country } from '../../types/CountryType'
 
-export default function TableRow({ countries }: any) {
+const TableRow: FunctionComponent<{ countries: Country }> = ({ countries }) => {
     const dispatch = useDispatch()
 
     const handleAddCountry = () => {
@@ -31,7 +32,7 @@ export default function TableRow({ countries }: any) {
             </td>
             <td>
                 {languages &&
-                    Object.values(languages).map((lang: any) => (
+                    Object.values(languages).map((lang: string) => (
                         <li key={lang}>{lang}</li>
                     ))}
             </td>
@@ -55,3 +56,5 @@ export default function TableRow({ countries }: any) {
         </tr>
     )
 }
+
+export default TableRow

@@ -5,6 +5,6 @@
  * @param {string} prefix - prefix for the unique string
  * @returns {string} - unique string
  */
-export function generateKey(prefix: any) {
+export function generateKey(prefix: string) {
     return `${prefix}_${Math.random().toString(36).substr(2, 9)}`
 }

@@ -7,8 +7,9 @@ export const APPLY_THEME = 'APPLY_THEME'
 
 export type Country = {
     population: number
-    name: string
+    name: { official: string }
     region: string
+    capital: string[]
     languages: string[]
     flags: {
         png: string

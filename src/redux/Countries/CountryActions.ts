@@ -24,7 +24,7 @@ export const fetchCountrySuccess = (countries: Country[]) => {
     }
 }
 
-export const fetchCountryFailure = (error: any) => {
+export const fetchCountryFailure = (error: string) => {
     return {
         type: FETCH_COUNTRY_FAILURE,
         payload: error,

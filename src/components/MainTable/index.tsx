@@ -5,14 +5,15 @@ import TableRow from '../TableRow'
 import Pagination from '../Pagination'
 
 import './mainTable.scss'
+import { Country } from '../../types/CountryType'
 
 const MainTable: FunctionComponent<{
-    currentCountry: any
-    currentPage: any
-    countryPerPage: any
-    countries: any
-    paginate: any
-    setActiveFilter: any
+    currentCountry: Country[]
+    currentPage: number | null
+    countryPerPage: number
+    countries: Country[]
+    paginate: (pageNumber: number) => void
+    setActiveFilter: Function
 }> = ({
     currentCountry,
     currentPage,
@@ -20,7 +21,7 @@ const MainTable: FunctionComponent<{
     countries,
     paginate,
     setActiveFilter,
-}: any) => {
+}) => {
     return (
         <div>
             <table>
@@ -29,7 +30,7 @@ const MainTable: FunctionComponent<{
                 </thead>
                 <tbody>
                     {currentCountry &&
-                        currentCountry.map((country: any, i: number) => (
+                        currentCountry.map((country: Country, i: number) => (
                             <TableRow key={i} countries={country} />
                         ))}
                 </tbody>

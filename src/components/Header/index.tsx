@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import './Header.scss'
 
-export default function Header({ setActiveFilter }: any) {
+const Header: FunctionComponent<{ setActiveFilter: Function }> = ({
+    setActiveFilter,
+}) => {
     return (
         <tr className="headTableRow">
             <td className="flag">
@@ -29,3 +31,5 @@ export default function Header({ setActiveFilter }: any) {
         </tr>
     )
 }
+
+export default Header

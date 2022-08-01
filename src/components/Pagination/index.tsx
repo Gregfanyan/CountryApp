@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import './Pagination.scss'
 
-function Pagination({
-    countryPerPage,
-    totalCountries,
-    currentPage,
-    paginate,
-}: any) {
+const Pagination: FunctionComponent<{
+    countryPerPage: number
+    totalCountries: number
+    currentPage: number | null
+    paginate: (pageNumber: number) => void
+}> = ({ countryPerPage, totalCountries, currentPage, paginate }) => {
     const pageNumbers = []
     for (let i = 1; i <= totalCountries / countryPerPage; i++) {
         pageNumbers.push(i)

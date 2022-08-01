@@ -18,7 +18,7 @@ export default function Home() {
     const indexOfFirstCountry = indexOfLastCountry - countryPerPage
     const currentCountry = data?.slice(indexOfFirstCountry, indexOfLastCountry)
 
-    const paginate = (pageNumber: any) => setCurrentPage(pageNumber)
+    const paginate = (pageNumber: number) => setCurrentPage(pageNumber)
 
     const handleChange: React.ReactEventHandler<HTMLInputElement> = (e) => {
         setSearch(e.currentTarget.value)

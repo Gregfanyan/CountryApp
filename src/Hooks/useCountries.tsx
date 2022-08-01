@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Country, AppState } from '../types/CountryType'
 import { fetchCountries } from '../redux/Countries/CountryActions'
 
-export default function useCountries(search: string, activeFilter: any) {
-    const [data, setData] = useState<any>([])
+export default function useCountries(search: string, activeFilter: string) {
+    const [data, setData] = useState<Country[]>([])
     const countries = useSelector(
         (state: AppState) => state.countries.countries
     )
@@ -19,26 +19,24 @@ export default function useCountries(search: string, activeFilter: any) {
     }, [countries])
 
     useEffect(() => {
-        const result = [...countries].filter((item: any) =>
+        const result = [...countries].filter((item: Country) =>
             item.name.official.toLowerCase().includes(search.toLowerCase())
         )
         setData(result)
     }, [countries, search])
 
     useEffect(() => {
-        if (!countries) return
-
         const sortCountry = (countries: Country[]) => {
             const filter = activeFilter.toLowerCase()
             switch (filter) {
                 case 'flag':
-                    const sortByFlag = [...countries].sort((a: any, b: any) =>
+                    const sortByFlag = [...countries].sort((a, b) =>
                         a.flags.png.localeCompare(b.flags.png)
                     )
                     setData(sortByFlag)
                     break
                 case 'region':
-                    const sortByRegion = [...countries].sort((a: any, b: any) =>
+                    const sortByRegion = [...countries].sort((a, b) =>
                         a.region.localeCompare(b.region)
                     )
                     setData(sortByRegion)
@@ -46,7 +44,7 @@ export default function useCountries(search: string, activeFilter: any) {
                 case 'language':
                     const sortByLanguage =
                         countries &&
-                        [...countries].sort((a: Country, b: Country) => {
+                        [...countries].sort((a, b) => {
                             const languageA = Object.values(
                                 a.languages || {}
                             )[0] as string
@@ -67,25 +65,25 @@ export default function useCountries(search: string, activeFilter: any) {
                     break
                 case 'population':
                     const sortPopulation = [...countries].sort(
-                        (a: any, b: any) => a.population - b.population
+                        (a, b) => a.population - b.population
                     )
                     setData(sortPopulation)
                     break
                 case 'name':
-                    const sortByName = [...countries].sort((a: any, b: any) =>
+                    const sortByName = [...countries].sort((a, b) =>
                         b.name.official.localeCompare(a.name.official)
                     )
                     setData(sortByName)
                     break
                 default:
-                    const sortByNames = [...countries].sort((a: any, b: any) =>
+                    const sortByNames = [...countries].sort((a, b) =>
                         a.name.official.localeCompare(b.name.official)
                     )
                     setData(sortByNames)
             }
         }
 
-        setData(sortCountry)
+        setData(sortCountry as unknown as Country[])
     }, [activeFilter, countries])
 
     return [data]

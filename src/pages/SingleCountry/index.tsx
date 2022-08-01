@@ -13,7 +13,7 @@ const SingleCountry = () => {
     const { id } = useParams<RouteParam>()
     const history = useHistory()
     const country = useSelector((state: AppState) =>
-        state.countries.countries.find((p) => p.name === id)
+        state.countries.countries.find((p) => p.name.official === id)
     )
 
     function handleClick() {
@@ -35,9 +35,11 @@ const SingleCountry = () => {
                     <Icon name="arrow left"> </Icon>
                 </Button>
             </Card.Group>
-            <Card.Group>
-                <ViewCountry country={country} />
-            </Card.Group>
+            {country && (
+                <Card.Group>
+                    <ViewCountry country={country} />
+                </Card.Group>
+            )}
         </div>
     )
 }
