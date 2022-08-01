@@ -3,10 +3,10 @@ import { FlagPropsType } from '../../types/ui'
 
 import './flag.scss'
 
-export default ({ flag }: FlagPropsType) => {
+export default ({ flags }: any) => {
     return (
         <div className="flag-container">
-            <img src={flag} alt="countryFlags" />
+            <img src={flags.png} alt="countryFlags" />
         </div>
     )
 }

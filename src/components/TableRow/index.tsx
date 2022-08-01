@@ -14,7 +14,7 @@ export default function TableRow({ countries }: any) {
     const handleAddCountry = () => {
         dispatch(addCountry(countries))
     }
-    const { flag, name, languages, population, region } = countries
+    const { flags, name, languages, population, region } = countries
 
     return (
         <tr className="tableRow">
