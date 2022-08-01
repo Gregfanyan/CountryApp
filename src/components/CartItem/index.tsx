@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { useDispatch } from 'react-redux'
 import { Card, Image, Button } from 'semantic-ui-react'
 
 import { removeCountry } from '../../redux'
+import { Country } from '../../types/CountryType'
 import './CartItem.scss'
 
 const CardStyle = { display: 'inline-block', marginRight: '10px' }
 
-function CartItem({ cart }: any) {
-    const { name, flag, population, region, languages } = cart
-    const language = languages[0]
+const CartItem: FunctionComponent<{ cart: Country }> = ({ cart }) => {
+    const { name, flags, population, region, languages } = cart
     const dispatch = useDispatch()
 
     const handleRemoveCountry = () => {
@@ -17,9 +17,15 @@ function CartItem({ cart }: any) {
     }
     return (
         <Card style={CardStyle} stackable>
-            <Image src={flag} alt="countries" wrapped ui={false} size="small" />
+            <Image
+                src={flags.png}
+                alt="countries"
+                wrapped
+                ui={false}
+                size="small"
+            />
             <Card.Content textAlign="center">
-                <Card.Header>{name}</Card.Header>
+                <Card.Header>{name.official}</Card.Header>
                 <Card.Description>{region}</Card.Description>
             </Card.Content>
             <Card.Content extra textAlign="center">
@@ -27,7 +33,7 @@ function CartItem({ cart }: any) {
             </Card.Content>
             <Card.Content extra textAlign="center">
                 language:
-                {language.name}
+                {Object.values(languages)[0]}
             </Card.Content>
             <Card.Content extra>
                 <div className="ui two buttons">
