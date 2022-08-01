@@ -26,12 +26,14 @@ export default function useCountries(search: string, activeFilter: any) {
     }, [countries, search])
 
     useEffect(() => {
+        if (!countries) return
+
         const sortCountry = (countries: Country[]) => {
             const filter = activeFilter.toLowerCase()
             switch (filter) {
                 case 'flag':
                     const sortByFlag = [...countries].sort((a: any, b: any) =>
-                        a.flag.localeCompare(b.flag)
+                        a.flags.png.localeCompare(b.flags.png)
                     )
                     setData(sortByFlag)
                     break
@@ -42,13 +44,26 @@ export default function useCountries(search: string, activeFilter: any) {
                     setData(sortByRegion)
                     break
                 case 'language':
-                    const sortByLanguages = [...countries].sort(
-                        (a: any, b: any) =>
-                            a.languages[0].name.localeCompare(
-                                b.languages[0].name
-                            )
-                    )
-                    setData(sortByLanguages)
+                    const sortByLanguage =
+                        countries &&
+                        [...countries].sort((a: Country, b: Country) => {
+                            const languageA = Object.values(
+                                a.languages || {}
+                            )[0] as string
+
+                            const languageB = Object.values(
+                                b.languages || {}
+                            )[0] as string
+
+                            if (languageA < languageB) {
+                                return -1
+                            }
+                            if (languageA > languageB) {
+                                return 1
+                            }
+                            return 0
+                        })
+                    setData(sortByLanguage)
                     break
                 case 'population':
                     const sortPopulation = [...countries].sort(
@@ -58,7 +73,7 @@ export default function useCountries(search: string, activeFilter: any) {
                     break
                 case 'name':
                     const sortByName = [...countries].sort((a: any, b: any) =>
-                        b.name.localeCompare(a.name)
+                        b.name.official.localeCompare(a.name.official)
                     )
                     setData(sortByName)
                     break
@@ -71,7 +86,7 @@ export default function useCountries(search: string, activeFilter: any) {
         }
 
         setData(sortCountry)
-    }, [activeFilter])
+    }, [activeFilter, countries])
 
     return [data]
 }

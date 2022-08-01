@@ -57,7 +57,9 @@ export type TableRowProps = {
 }
 
 export type FlagPropsType = {
-    flag: string
+    flags: {
+        png: string
+    }
 }
 
 export type CountryDetails = {

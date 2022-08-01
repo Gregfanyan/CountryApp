@@ -23,6 +23,8 @@ export default function Home() {
     const handleChange: React.ReactEventHandler<HTMLInputElement> = (e) => {
         setSearch(e.currentTarget.value)
     }
+
+    console.log('currentCountry', currentCountry)
     return (
         <div>
             <Main />

@@ -10,7 +10,9 @@ export type Country = {
     name: string
     region: string
     languages: string[]
-    flag: string
+    flags: {
+        png: string
+    }
 }
 
 export type MainTableProps = {

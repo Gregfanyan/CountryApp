@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import Header from '../Header'
 import TableRow from '../TableRow'
@@ -6,14 +6,21 @@ import Pagination from '../Pagination'
 
 import './mainTable.scss'
 
-export default function MainTable({
+const MainTable: FunctionComponent<{
+    currentCountry: any
+    currentPage: any
+    countryPerPage: any
+    countries: any
+    paginate: any
+    setActiveFilter: any
+}> = ({
     currentCountry,
     currentPage,
     countryPerPage,
     countries,
     paginate,
     setActiveFilter,
-}: any) {
+}: any) => {
     return (
         <div>
             <table>
@@ -36,3 +43,5 @@ export default function MainTable({
         </div>
     )
 }
+
+export default MainTable
