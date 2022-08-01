@@ -22,8 +22,8 @@ export default function MainTable({
                 </thead>
                 <tbody>
                     {currentCountry &&
-                        currentCountry.map((country?: any) => (
-                            <TableRow key={country.name} countries={country} />
+                        currentCountry.map((country: any, i: number) => (
+                            <TableRow key={i} countries={country} />
                         ))}
                 </tbody>
             </table>

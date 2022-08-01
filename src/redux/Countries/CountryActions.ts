@@ -52,7 +52,7 @@ export const fetchCountries = () => {
     return (dispatch: Dispatch) => {
         dispatch(fetchCountryRequest())
         axios
-            .get('https://restcountries.eu/rest/v2/all')
+            .get('https://restcountries.com/v3.1/all')
             .then((response) => {
                 dispatch(fetchCountrySuccess(response.data))
             })

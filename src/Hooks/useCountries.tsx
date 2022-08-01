@@ -10,7 +10,6 @@ export default function useCountries(search: string, activeFilter: any) {
         (state: AppState) => state.countries.countries
     )
     const dispatch = useDispatch()
-
     useEffect(() => {
         dispatch(fetchCountries())
     }, [dispatch])
@@ -21,7 +20,7 @@ export default function useCountries(search: string, activeFilter: any) {
 
     useEffect(() => {
         const result = [...countries].filter((item: any) =>
-            item.name.toLowerCase().includes(search.toLowerCase())
+            item.name.official.toLowerCase().includes(search.toLowerCase())
         )
         setData(result)
     }, [countries, search])
@@ -65,7 +64,7 @@ export default function useCountries(search: string, activeFilter: any) {
                     break
                 default:
                     const sortByNames = [...countries].sort((a: any, b: any) =>
-                        a.name.localeCompare(b.name)
+                        a.name.official.localeCompare(b.name.official)
                     )
                     setData(sortByNames)
             }

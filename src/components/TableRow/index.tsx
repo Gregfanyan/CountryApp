@@ -15,23 +15,24 @@ export default function TableRow({ countries }: any) {
         dispatch(addCountry(countries))
     }
     const { flag, name, languages, population, region } = countries
+
     return (
         <tr className="tableRow">
             <td>
-                <Flag flag={flag} />
+                <Flag flags={flags} />
             </td>
             <td>
                 <Link
-                    to={`/TableRow/${name}`}
+                    to={`/TableRow/${name.official}`}
                     style={{ color: 'inherit', textDecoration: 'inherit' }}
                 >
-                    {name}
+                    {name.official}
                 </Link>
             </td>
             <td>
                 {languages &&
-                    languages.map((lang: any) => (
-                        <li key={lang.name}>{lang.name}</li>
+                    Object.values(languages).map((lang: any) => (
+                        <li key={lang}>{lang}</li>
                     ))}
             </td>
             <td>{population}</td>
@@ -45,7 +46,7 @@ export default function TableRow({ countries }: any) {
                 <Menu.Item
                     className="InfoButton"
                     as={Link}
-                    to={`/TableRow/${name}`}
+                    to={`/TableRow/${name.official}`}
                     size="mini"
                 >
                     <Icon name="info circle" size="big"></Icon>

@@ -23,7 +23,6 @@ export default function Home() {
     const handleChange: React.ReactEventHandler<HTMLInputElement> = (e) => {
         setSearch(e.currentTarget.value)
     }
-
     return (
         <div>
             <Main />
